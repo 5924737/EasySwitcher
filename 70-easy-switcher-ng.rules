@@ -1,0 +1,5 @@
+# Даёт пользователю активного сеанса доступ к клавиатурам и мышам (как уже есть для /dev/uinput).
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_KEYBOARD}=="1", TAG+="uaccess"
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_MOUSE}=="1", TAG+="uaccess"
+SUBSYSTEM=="input", KERNEL=="event*", ENV{ID_INPUT_TOUCHPAD}=="1", TAG+="uaccess"
+KERNEL=="uinput", TAG+="uaccess"

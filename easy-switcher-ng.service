@@ -1,0 +1,16 @@
+[Unit]
+Description=easy-switcher-ng - keyboard layout corrector
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/share/easy-switcher-ng/venv/bin/python %h/.local/share/easy-switcher-ng/easy_switcher_ng.py
+Restart=always
+RestartSec=1
+# Приоритет по CPU/IO выше, чем у остальных пользовательских программ.
+CPUWeight=1000
+IOWeight=1000
+
+[Install]
+WantedBy=graphical-session.target
